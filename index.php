@@ -36,12 +36,12 @@
 	</head>
 	
 	<body>
-		<h1>DSP PROJECT</h1>
+		<div class="orange"><h1>DSP PROJECT</h1></div>
 		<div id="start">
 			<form action="index.php" method="post">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-lg-4 redbox">
+						<div class="col-xs-12 col-sm-4 col-lg-4 redbox">
 							<img src="img/record.png" alt="record icon" id="recordIcon">
 							<h3> AUDIO RECORD </h3>
 							<button type="submit" name="Start" value="Start" style="margin-right:25px;">
@@ -52,21 +52,31 @@
 							</button><br>
 							<input type="submit" id="recordSubmit">
 						</div>
-						<div class="col-xs-8 col-sm-8 col-lg-8 bluebox">
+						<div class="col-xs-12 col-sm-8 col-lg-8 bluebox">
 							<h3> STEPPER MOTOR CONTROL </h3>
+							<img src="img/Stepper.png" alt="Stepper Icon" style="margin-bottom:10px;"/><br>
 							Input RPM:
-							<input type="number" name="RPM" min="10" max="100" step="10" value="">
-							<input type="submit" name="RunStepper"  value="Run stepper">
-							<input type="submit" name="StopStepper"  value="Stop stepper">  
-							<br><br>
+							<input type="number" name="RPM" min="10" max="100" step="10" value=""><br><br>
+							
+							<input type="submit" name="RunStepper"  value="Run stepper" id="RunStepper">
+							<input type="submit" name="StopStepper"  value="Stop stepper" id="StopStepper">  
+						</div>
+						<div class="col-xs-12 col-sm-8 col-lg-8 purplebox">
 							<h3> RECORD STEPPER MOTOR SOUND AT DIFFRENT SPEED (RPM) </h3>
-							Lower Limit speed:
-							<input type="number" name="lowerLimit" min="10" max="100" value=""><br><br>
-							Upper Limit speed:
-							<input type="number" name="upperLimit" min="10" max="100" value=""><br><br>
-							Increment speed:
-							<input type="number" name="increment"  min="1"  max="10"  value=""><br><br>
-							<input type="submit" name="autoRecord" value="Auto Record"><br><br>
+							<img src="img/auto-record.png" alt="auto record" style="margin-bottom:10px;"/><br>
+							<div class="col-xs-4 col-sm-4 col-lg-4">
+								Lower Limit speed:
+								<input type="number" name="lowerLimit" min="10" max="100" value="">
+							</div>
+							<div class="col-xs-4 col-sm-4 col-lg-4">
+								Upper Limit speed:
+								<input type="number" name="upperLimit" min="10" max="100" value="">
+							</div>
+							<div class="col-xs-4 col-sm-4 col-lg-4">
+								Increment speed:
+								<input type="number" name="increment"  min="1"  max="10"  value="">
+							</div><br><br>
+							<input type="submit" name="autoRecord" value="Auto Record" id="autoRecord">
 						</div>
 					</div>
 				</div>
@@ -76,8 +86,8 @@
 			<div class="row">		
 				<div id="inputFile"  class="col-xs-12 col-sm-12 col-lg-12 greenbox">
 					<form id="inputFileForm" action="index.php" method="post">
-						<input id="hiddenInput" type="hidden" name="upfile"><br>
-						<input                  type="submit" value="Play latest record">
+						<input id="hiddenInput" type="hidden" name="upfile">
+						<input                  type="submit" value="Play latest record" id="playLastRecord">
 					</form>
 				</div>
 			</div>
